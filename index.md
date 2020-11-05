@@ -1,37 +1,88 @@
-## Welcome to GitHub Pages
+<html>
+<head>
+<title>Calcolo MCD e mcm </title>
+  <link rel="stylesheet" type="text/css" href="mcdmcm.css">
+  <meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
 
-You can use the [editor on GitHub](https://github.com/kiiro-1/kiiro-1.github.io-repository/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+<script type="text/javascript">
+<!-- Begin
+function go(input1,input2,input3,input4){
+if (document.form1.text3.value=="" && document.form1.text4.value==""){
+document.form1.answer.value=hcf(input1,input2);
+document.form1.answer2.value=lcm(input1,input2);
+}
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+if (document.form1.text3.value!="" && document.form1.text4.value==""){
+document.form1.answer.value=hcf(hcf(input1,input2),input3);
+document.form1.answer2.value=lcm(lcm(input1,input2),input3);
+}
 
-### Markdown
+if (document.form1.text3.value!="" && document.form1.text4.value!=""){
+document.form1.answer.value=hcf(hcf(hcf(input1,input2),input3),input4);
+document.form1.answer2.value=lcm(lcm(lcm(input1,input2),input3),input4);
+}
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+}
 
-```markdown
-Syntax highlighted code block
+function hcf(text1,text2){
+var gcd=1;
+if (text1>text2) {text1=text1+text2; text2=text1-text2; text1=text1-text2;}
+if ((text2==(Math.round(text2/text1))*text1)) {gcd=text1}else {
+for (var i = Math.round(text1/2) ; i > 1; i=i-1) {
+if ((text1==(Math.round(text1/i))*i))
+if ((text2==(Math.round(text2/i))*i)) {gcd=i; i=-1;}
+}
+}
+return gcd;
+}
 
-# Header 1
-## Header 2
-### Header 3
+function lcm(t1,t2){
+var cm=1;
+var f=hcf(t1,t2);
+cm=t1*t2/f;
+return cm;
+}
+//  End -->
+</script>
 
-- Bulleted
-- List
+</head>
 
-1. Numbered
-2. List
+<body>
+<p> </p>
 
-**Bold** and _Italic_ and `Code` text
+<h1 style="text-align: center">Calcolo M.C.D. e m.c.m</h1>
 
-[Link](url) and ![Image](src)
-```
+<form name="form1">
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+  <p><font size="3" face="Arial">1° numero: </font><font face="Arial" size="3"> <input
+  type="text" name="text1" size="5"><br>
+  2° numero: </font><font face="Arial" size="3"> <input type="text"
+  name="text2" size="5"><br
+>
+  3° numero: </font><font face="Arial" size="3"> <input type="text"
+  name="text3" size="5"> (facoltativo<br
+>
+  4° numero: </font><font face="Arial" size="3"> <input type="text"
+  name="text4" size="5"> (facoltativo)<br>
+  <br>
 
-### Jekyll Themes
+  </font><font face="Arial" size="3">
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/kiiro-1/kiiro-1.github.io-repository/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+  <input type="button" value="Calcola il m.c.m. e il M.C.D."
+  onclick="go(eval(document.form1.text1.value),eval(document.form1.text2.value),eval(document.form1.text3.value),eval(document.form1.text4.value))">
+  <br>
+  <br>
+  Massimo comun divisore (M.C.D.): </font><font face="Arial" size="3"> <input type="text" name="answer" size="15" readonly="readonly"
+><br>
+  Minimo comune multiplo   (m.c.m.): </font>
+  <font face="Arial" size="3"> <input type="text" name="answer2" size="15" readonly="readonly"></font></p>
+</form>
 
-### Support or Contact
+<table border="1" width="100%" id="table1">
+  <tr></tr>
 
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+</td>
+  </tr>
+</table>
+</body>
+</html>
